@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 
 const campgrounds = require('./routes/campgrounds');
 const reviews = require('./routes/reviews');
-''
+
 mongoose.connect('mongodb://localhost:27017/yelp-camp', {
     useNewUrlParser: true, 
     useUnifiedTopology: true,
@@ -45,7 +45,7 @@ app.use(flash());
 
 app.use((req, res, next) => {
     res.locals.success = req.flash('success');
-    res.locals.errors = req.flash('error');
+    res.locals.error = req.flash('error');
     next();
 })
 
