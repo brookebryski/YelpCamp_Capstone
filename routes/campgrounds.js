@@ -13,8 +13,7 @@ router.route('/')
 .post(upload.array('image'), (req, res) => {
     console.log(req.body, req.files);
 })
-// router.get('/new', isLoggedIn, campgrounds.renderNewForm);
-// removed middleware here for debugging purposes because login does not work right now
+router.get('/new', isLoggedIn, campgrounds.renderNewForm);
 router.get('/new', campgrounds.renderNewForm)
 
 router.route('/:id')
