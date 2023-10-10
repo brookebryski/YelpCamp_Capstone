@@ -29,6 +29,10 @@ const seedDB = async () => {
             title: `${sample(descriptors)} ${sample(places)}`, 
             description: 'This is a campground!', 
             price,
+            geometry: {
+                type: "Point",
+                coordinates: [-113.1331, 47.0202]
+            },
             images:
             [
                 {
